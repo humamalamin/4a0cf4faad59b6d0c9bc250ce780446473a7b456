@@ -45,7 +45,7 @@ class Database
     public function getByID($id)
     {
         $query = "SELECT references_id, number_va, status FROM transactions
-                WHERE id = $id";
+                WHERE references_id = '$id'";
         $stmt = $this->conn->prepare($query);
         $stmt->execute();
 
@@ -94,7 +94,7 @@ class Database
             $result = $stmt->execute();
 
             if ($result) {
-                return $this->conn->lastInsertId();
+                return $data['references_id'];
             } else {
                 return "false";
             }
