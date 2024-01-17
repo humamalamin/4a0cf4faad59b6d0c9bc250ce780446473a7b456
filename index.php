@@ -64,6 +64,7 @@ if ($request_uri[0] == '/transactions') {
             'status' => $status
         ];
 
+        http_response_code(201);
         echo $transactionController->store($dataRequest);
         return;
     }

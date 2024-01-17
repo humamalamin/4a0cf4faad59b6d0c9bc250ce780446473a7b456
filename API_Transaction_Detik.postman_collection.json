@@ -12,7 +12,8 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8000/transactions?merchant_id=261a5f00-b479-11ee-8f53-0242ac110003&references_id=261a5fb4-b479-11ee-8f53-0242ac110003",
+					"raw": "http://localhost:8000/transactions?references_id=261a5fb4-b479-11ee-8f53-0242ac110003",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
@@ -23,7 +24,8 @@
 					"query": [
 						{
 							"key": "merchant_id",
-							"value": "261a5f00-b479-11ee-8f53-0242ac110003"
+							"value": "261a5f00-b479-11ee-8f53-0242ac110003",
+							"disabled": true
 						},
 						{
 							"key": "references_id",
@@ -32,7 +34,91 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/transactions?merchant_id=261a5f00-b479-11ee-8f53-0242ac110003&references_id=261a5fb4-b479-11ee-8f53-0242ac110003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "merchant_id",
+									"value": "261a5f00-b479-11ee-8f53-0242ac110003"
+								},
+								{
+									"key": "references_id",
+									"value": "261a5fb4-b479-11ee-8f53-0242ac110003"
+								}
+							]
+						}
+					},
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"references_id\": \"261a5fb4-b479-11ee-8f53-0242ac110003\",\n    \"status\": \"Pending\",\n    \"invoice_id\": \"261a5e3b-b479-11ee-8f53-0242ac110003\"\n}"
+				},
+				{
+					"name": "Error Required",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/transactions?references_id=261a5fb4-b479-11ee-8f53-0242ac110003",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"transactions"
+							],
+							"query": [
+								{
+									"key": "merchant_id",
+									"value": "261a5f00-b479-11ee-8f53-0242ac110003",
+									"disabled": true
+								},
+								{
+									"key": "references_id",
+									"value": "261a5fb4-b479-11ee-8f53-0242ac110003"
+								}
+							]
+						}
+					},
+					"code": 442,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"merchant_id / references_id is required\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Simpan Transaction",
@@ -50,28 +136,28 @@
 					"formdata": [
 						{
 							"key": "merchant_id",
-							"value": "a237f72a-12ec-4094-a319-bf86de7f4388",
+							"value": "a237f72a-12ec-4094-a319-bf86de7f4389",
 							"type": "text"
 						},
 						{
 							"key": "invoice_id",
-							"value": "adkankdnlan",
+							"value": "adkankdnlui",
 							"type": "text"
 						},
 						{
 							"key": "item_name",
-							"value": "cincin",
+							"value": "cincin man",
 							"type": "text"
 						},
 						{
 							"key": "amount",
-							"value": "1200000",
+							"value": "120000",
 							"description": "integer",
 							"type": "text"
 						},
 						{
 							"key": "payment_type",
-							"value": "virtual_account",
+							"value": "credit_card",
 							"description": "virtual_account atau credit_card",
 							"type": "text"
 						},
@@ -93,7 +179,154 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Sample Virtual Account",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "merchant_id",
+									"value": "a237f72a-12ec-4094-a319-bf86de7f4389",
+									"type": "text"
+								},
+								{
+									"key": "invoice_id",
+									"value": "adkankdnlui",
+									"type": "text"
+								},
+								{
+									"key": "item_name",
+									"value": "cincin man",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "120000",
+									"description": "integer",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "virtual_account",
+									"description": "virtual_account atau credit_card",
+									"type": "text"
+								},
+								{
+									"key": "customer_name",
+									"value": "Andi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"references_id\": \"0b4e5913-b680-420a-a87d-55a526c12486\",\n    \"number_va\": \"2f414981b1\",\n    \"status\": \"Pending\"\n}"
+				},
+				{
+					"name": "Sample Credit Card",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "merchant_id",
+									"value": "a237f72a-12ec-4094-a319-bf86de7f4389",
+									"type": "text"
+								},
+								{
+									"key": "invoice_id",
+									"value": "adkankdnlui",
+									"type": "text"
+								},
+								{
+									"key": "item_name",
+									"value": "cincin man",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "120000",
+									"description": "integer",
+									"type": "text"
+								},
+								{
+									"key": "payment_type",
+									"value": "credit_card",
+									"description": "virtual_account atau credit_card",
+									"type": "text"
+								},
+								{
+									"key": "customer_name",
+									"value": "Andi",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"transactions"
+							]
+						}
+					},
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"references_id\": \"9af10d7a-a3a6-449d-9bea-a138b46fd019\",\n    \"number_va\": null,\n    \"status\": \"Pending\"\n}"
+				}
+			]
 		}
 	]
 }
