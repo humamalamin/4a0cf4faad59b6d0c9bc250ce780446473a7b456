@@ -1,10 +1,8 @@
 # API TRANSACTION
 
 ## Tech Stack
-- PHP 8.0 or higher : https://www.php.net/downloads.php
+- PHP 8.1 or higher : https://www.php.net/downloads.php
 - Mysql (Database) : https://www.mysql.com/downloads/
-- Docker (Container) : https://www.docker.com/get-started/
-- Docker Compose : https://docs.docker.com/compose/
 - Composer : https://getcomposer.org/download/
 
 please, all tech stack has been installed in your local 
@@ -40,17 +38,3 @@ or
 
 composer style-code
 ```
-
-### Running Unit Test
-
-```bash
-composer generate-test
-```
-
-### Run with Docker
-
-```Shell
-docker-compose up --build
-```
-
-*Note: I have tried to implement dockerize in this app. But somehow I always fail when running it. So I suggest to use the manual way to run this application. Sincerely

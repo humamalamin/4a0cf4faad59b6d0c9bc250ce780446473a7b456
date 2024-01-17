@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'humamalamin/detik-test',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4b5fba7c68f0990f91ef0fd73e847924561ef507',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -29,9 +29,9 @@
             'dev_requirement' => false,
         ),
         'humamalamin/detik-test' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4b5fba7c68f0990f91ef0fd73e847924561ef507',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -66,7 +66,7 @@
         'squizlabs/php_codesniffer' => array(
             'pretty_version' => '4.0.x-dev',
             'version' => '4.0.9999999.9999999-dev',
-            'reference' => 'f350115d605a863760719c8672ca522185ebec16',
+            'reference' => 'b5e06886cb7120459e05c17c69b85fbd2d171766',
             'type' => 'library',
             'install_path' => __DIR__ . '/../squizlabs/php_codesniffer',
             'aliases' => array(),
